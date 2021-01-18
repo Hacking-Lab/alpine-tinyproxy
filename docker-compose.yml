@@ -1,19 +1,17 @@
 version: '3.6'
 
 services:
-  alpine-squid:
+  alpine-tinyproxy:
     build: .
-    image: hackinglab/alpine-squid:3.2
+    image: hackinglab/alpine-tinyproxy:3.2
     environment:
     - AUTHOR=e1
     - HL_USER_USERNAME=hacker
     ports:
-      - 3128:3128
+      - 8888:8888
     volumes:
-      - ./share/squid.conf:/etc/squid/squid.conf
-      - ./share/filter:/etc/squid/filter
-
-
+      - ./share/tinyproxy.conf:/etc/tinyproxy/tinyproxy.conf
+      - ./share/filter:/etc/tinyproxy/filter
 
 
 
